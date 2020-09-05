@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import MainScreen from "./Components/MainScreen";
 import AuthScreen from "./Components/auth/AuthScreen";
+import Recipe from "./Components/recipes/Recipe";
+
 import { useAuth0 } from "@auth0/auth0-react";
+import { meals } from "./Helpers/Recipes";
 
 
 const App = () => {
@@ -25,6 +28,13 @@ const App = () => {
       <Route exact path="/">
         {isAuthenticated ? <Redirect to="/main" /> : <Redirect to="/auth" />}
       </Route>
+      {
+        meals.map(meal => (
+          <Route path={`/recipe/${meal.id}`}>
+            {isAuthenticated ? <Recipe meal={meal} /> : <Redirect to="/auth" />}
+          </Route>
+        ))
+      }
       {/* <Route path="*">*/}
       {/* <NoRouteMatch /> */}
       {/* </Route> */}
