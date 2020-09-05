@@ -1,12 +1,10 @@
-import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 // Handles login
 const LoginScreen = () => {
-    return (
-        <div>
-            <h1>Login Screen</h1>
-        </div>
-    );
-}
+    const { loginWithRedirect } = useAuth0();
+
+    loginWithRedirect();
+};
 
 export default LoginScreen;
