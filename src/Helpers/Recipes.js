@@ -24,7 +24,7 @@ function randomMeal() {
         "description": "Włóż rybę do ryżu i glonów."
     }
     ];
-    return food[getRandomInt(0, food.length)]; 
+    return food[getRandomInt(0, food.length)];
 };
 
 export default randomMeal;
