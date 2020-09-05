@@ -1,5 +1,4 @@
 import { Route, Redirect } from "react-router-dom";
-import SavedRecipesScreen from "../recipe/SavedRecipesScreen";
 
 const isAuth = false;
 
@@ -20,4 +19,6 @@ const PrivateRoute = ({ children, ...rest}) => {
             }}
         />
     );
-}
+};
+
+export default PrivateRoute;
