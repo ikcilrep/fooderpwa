@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { randomMeal } from '../../Helpers/Recipes';
+import { randomRecipe } from '../../Helpers/Recipes';
 import Cookies from 'universal-cookie';
 
 
 
 const SwipeScreen = () => {
-    const [meal, setMeal] = useState(randomMeal());
+    const [meal, setMeal] = useState(randomRecipe());
     const cookies = new Cookies();
 
     if (!(cookies.get('saved-recipes') instanceof Array)) {
@@ -14,7 +14,7 @@ const SwipeScreen = () => {
 
 
     const onSwipeLeft = () => {
-        setMeal(randomMeal());
+        setMeal(randomRecipe());
     };
 
     const onSwipeRight = () => {
@@ -22,7 +22,7 @@ const SwipeScreen = () => {
         if (!cookie.includes(meal.id)) {
             cookies.set('saved-recipes', cookie.concat(meal.id));
         }
-        setMeal(randomMeal());
+        setMeal(randomRecipe());
     }
 
     return (

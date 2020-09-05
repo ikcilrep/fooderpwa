@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
-const meals = [{
+const recipes = [{
     "id": 0,
     "pictureAddress": "https://www.visitgozo.com/wp-content/uploads/2016/07/gozo-food.jpg",
     "name": "Słoiki",
@@ -27,6 +27,6 @@ const meals = [{
 }
 ];
 
-const randomMeal = () => meals[getRandomInt(0, meals.length)];
+const randomRecipe = () => recipes[getRandomInt(0, recipes.length)];
 
-export { randomMeal, meals };
+export { randomRecipe, recipes as meals };
