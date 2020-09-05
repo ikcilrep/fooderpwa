@@ -3,21 +3,27 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import "./App.css";
 import MainScreen from "./Components/MainScreen";
-import AuthScreen from "./auth/AuthScreen";
+import AuthScreen from "./Components/auth/AuthScreen";
+import { useAuth0 } from "@auth0/auth0-react";
 
-const isAuth = true; // PLACEHOLDER
 
 const App = () => {
+  const { isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
   return (
     <Router>
       <Route path="/main">
-        {isAuth ? <MainScreen /> : <Redirect to="/auth" />}
+        {isAuthenticated ? <MainScreen /> : <Redirect to="/auth" />}
       </Route>
       <Route path="/auth">
-        {isAuth ? <Redirect to="/main" /> : <AuthScreen />}
+        {isAuthenticated ? <Redirect to="/main" /> : <AuthScreen />}
       </Route>
       <Route exact path="/">
-        {isAuth ? <Redirect to="/main" /> : <Redirect to="/auth" />}
+        {isAuthenticated ? <Redirect to="/main" /> : <Redirect to="/auth" />}
       </Route>
       {/* <Route path="*">*/}
       {/* <NoRouteMatch /> */}
