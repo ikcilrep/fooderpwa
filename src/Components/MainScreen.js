@@ -3,6 +3,7 @@ import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
 
 import SwipeScreen from "./recipes/SwipeScreen";
 import SavedRecipesScreen from "./recipes/SavedRecipesScreen";
+import LogoutButton from './auth/LogoutButton';
 
 // Displays recipe, allows swiping left or right
 const MainScreen = () => {
@@ -16,6 +17,7 @@ const MainScreen = () => {
                     <li><Link to={`${url}/saved`}>Saved</Link></li>
                 </ul>
             </div>
+            <LogoutButton/>
 
             <Switch>
                 <Route path={`${path}/swipe`}>
