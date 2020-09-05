@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import "./App.css";
 import MainScreen from "./Components/MainScreen";
-import AuthScreen from "./auth/AuthScreen";
+import AuthScreen from "./Components/auth/AuthScreen";
 
 const isAuth = true; // PLACEHOLDER
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch, Link, useRouteMatch } from "react-router-dom";
 
-import SwipeScreen from "./SwipeScreen";
-import SavedRecipesScreen from "./SavedRecipesScreen";
+import SwipeScreen from "./recipes/SwipeScreen";
+import SavedRecipesScreen from "./recipes/SavedRecipesScreen";
 
 // Displays recipe, allows swiping left or right
 const MainScreen = () => {
