@@ -1,12 +1,25 @@
-import React from "react";
-import randomMeal from '../../Helpers/Recipes';
+import React, { useState } from "react";
+import { randomMeal } from '../../Helpers/Recipes';
+
+
 
 const SwipeScreen = () => {
-    const meal = randomMeal();
+    const [meal, setMeal] = useState(randomMeal());
+
+    const onSwipeLeft = () => {
+        setMeal(randomMeal());
+    };
+
+    const onSwipeRight = () => {
+        setMeal(randomMeal());
+    }
+
     return (
         <>
+            <button onClick={onSwipeLeft}>Left</button>
+            <button onClick={onSwipeRight}>Right</button>
             <h1>{meal.name}</h1>
-            <img alt="Very taste image." src={meal.pictureAddress}/>
+            <img alt="Very tasty." src={meal.pictureAddress} />
             <p>{meal.description}</p>
         </>
     );
