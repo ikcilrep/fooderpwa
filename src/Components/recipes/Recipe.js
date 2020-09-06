@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Recipe = ({ meal }) => (
     <>
+        <Link to="/main">
+            <button>Return</button>
+        </Link>
         <h1>{meal.name}</h1>
         <h3>Ingredients:</h3>
         <ul>
