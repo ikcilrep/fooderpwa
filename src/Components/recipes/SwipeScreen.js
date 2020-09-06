@@ -16,6 +16,7 @@ const SwipeScreen = () => {
 
     const onSwipeLeft = () => {
         setMeal(randomRecipe());
+        setShowMore(false);
     };
 
     const onSwipeRight = () => {
@@ -24,7 +25,8 @@ const SwipeScreen = () => {
             cookies.set('saved-recipes', cookie.concat(meal.id));
         }
         setMeal(randomRecipe());
-    }
+        setShowMore(false);
+    };
 
     const onClickShowMore = () => {
         setShowMore(!showMore);
