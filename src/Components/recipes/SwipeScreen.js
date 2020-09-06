@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { randomRecipe } from '../../Helpers/Recipes';
 import Cookies from 'universal-cookie';
+import {Link} from 'react-router-dom';
 
 
 
@@ -37,6 +38,9 @@ const SwipeScreen = () => {
             <button onClick={onSwipeLeft}>Left</button>
             <button onClick={onSwipeRight}>Right</button>
             <button onClick={onClickShowMore}>{showMore ? 'Show less' : 'Show more'}</button>
+            <Link to="/main">
+                <button>Return</button>
+            </Link>
             {showMore ?
                 <>
                     <h3>Ingredients:</h3>
