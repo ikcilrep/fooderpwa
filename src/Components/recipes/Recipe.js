@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Recipe = ({ meal }) => (
     <>
-        <Link to="/main">
+        <Link to="/saved">
             <button>Return</button>
         </Link>
         <h1>{meal.name}</h1>
