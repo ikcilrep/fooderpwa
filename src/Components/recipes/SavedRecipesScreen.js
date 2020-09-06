@@ -6,11 +6,17 @@ import { Link } from "react-router-dom";
 const SavedRecipesScreen = () => {
     const cookies = new Cookies();
     const savedRecipes = cookies.get('saved-recipes');
-
     return (
-        savedRecipes instanceof Array ? savedRecipes.map(id => (<>
-            <br /><Link to={`/recipe/${id}`}>{meals[id].name}</Link>
-        </>)) : null
+        <>
+            <Link to="/main">
+                <button>Return</button>
+            </Link>
+            {
+                savedRecipes instanceof Array ? savedRecipes.map(id => (<>
+                    <br /><Link to={`/recipe/${id}`}>{meals[id].name}</Link>
+                </>)) : null
+            }
+        </>
     );
 }
 
